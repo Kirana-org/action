@@ -29,7 +29,7 @@ jobs:
       # Runs a single command using the runners shell and run will give echo hello world
       - name: print greeting
         run: echo Hello, world!
-      #run custom
+      # run custom
       - name : give my name
         run: kiran
         

@@ -1,0 +1,30 @@
+# we have a requiremnt saying evrytime atoumatically that need to test all node js and dependenies is installed in my app so we need to write a workflow for this to atouamtically check
+name: secondworkflow
+on:
+  push:
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubantu-latest
+    steps: 
+    # as per our requiremnt first we need to get the code so we need to make use of app called checkout 
+      - name: get code
+       # to use action we can make use of  - use command
+        uses: actions/checkout@v3
+      # next we need to test node js is installed in the system
+      - name: node js test
+        uses: actions/setup-node@v3
+        with: 
+          node-version: '18'
+          # we need to install dependencies
+      - name: install depen
+        run: npm install
+      # we need to test 
+      - name: run test
+        run: npm test
+        
+          
+          
+            
+        
+         
